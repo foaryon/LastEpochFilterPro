@@ -1,0 +1,57 @@
+{
+  "appId": "com.epochfilterpro.app",
+  "productName": "EpochFilterPro",
+  "directories": {
+    "output": "dist-electron"
+  },
+  "files": [
+    "electron/**/*",
+    "server/**/*",
+    "client/dist/**/*",
+    "shared/**/*",
+    "package.json",
+    "node_modules/**/*",
+    "!node_modules/**/test/**",
+    "!node_modules/**/*.md",
+    "!node_modules/**/*.map",
+    "!**/*.ts",
+    "!**/tsconfig.json",
+    "!**/.git",
+    "!**/.gitignore"
+  ],
+  "win": {
+    "target": [
+      {
+        "target": "nsis",
+        "arch": ["x64"]
+      },
+      {
+        "target": "portable",
+        "arch": ["x64"]
+      }
+    ],
+    "icon": "electron/icon.ico",
+    "artifactName": "EpochFilterPro-${version}-win-${arch}.${ext}",
+    "publisherName": "EpochFilterPro",
+    "requestedExecutionLevel": "asInvoker",
+    "compression": "maximum"
+  },
+  "nsis": {
+    "oneClick": false,
+    "allowToChangeInstallationDirectory": true,
+    "deleteAppDataOnUninstall": true,
+    "createDesktopShortcut": true,
+    "createStartMenuShortcut": true,
+    "shortcutName": "EpochFilterPro",
+    "uninstallDisplayName": "EpochFilterPro - Last Epoch Filter Creator",
+    "license": "LICENSE.txt",
+    "artifactName": "EpochFilterPro-Setup-${version}.${ext}"
+  },
+  "portable": {
+    "artifactName": "EpochFilterPro-Portable-${version}.exe"
+  },
+  "extraMetadata": {
+    "main": "electron/main.js"
+  },
+  "publish": null
+}

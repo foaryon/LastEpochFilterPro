@@ -1,0 +1,12 @@
+# render.yaml - add to repo root
+services:
+  - type: web
+    name: lastepochfilterpro-server
+    env: node
+    region: oregon        # change region if you prefer
+    branch: main
+    repo: https://github.com/foaryon/LastEpochFilterPro
+    path: server         # <- IMPORTANT: tell Render to use the `server` folder
+    buildCommand: npm install && npm run build
+    startCommand: npm run start
+    plan: starter
